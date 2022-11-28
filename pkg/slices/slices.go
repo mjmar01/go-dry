@@ -19,3 +19,11 @@ func Distinct[T comparable](slice []T) (distinct []T) {
 	}
 	return
 }
+
+func Repeat[T any](count int, elements ...T) (out []T) {
+	out = make([]T, 0, len(elements)*count)
+	for i := 0; i < count; i++ {
+		out = append(out, elements...)
+	}
+	return
+}

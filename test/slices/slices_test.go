@@ -19,3 +19,11 @@ func TestDistinct(t *testing.T) {
 	distinct := []int{1, 2, 3}
 	assert.Equal(distinct, slices.Distinct(slice))
 }
+
+func TestRepeat(t *testing.T) {
+	assert := New(t)
+	slice := slices.Repeat(3, "1", "2")
+
+	assert.Equal(6, len(slice))
+	assert.Equal([]string{"1", "2", "1", "2", "1", "2"}, slice)
+}

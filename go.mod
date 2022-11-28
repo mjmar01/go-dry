@@ -1,4 +1,4 @@
-module go-dry
+module github.com/mjmar01/go-dry
 
 go 1.19
 

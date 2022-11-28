@@ -1,8 +1,8 @@
 package options
 
 import (
+	"github.com/mjmar01/go-dry/pkg/options"
 	. "github.com/stretchr/testify/assert"
-	"go-dry/pkg/options"
 	"testing"
 )
 

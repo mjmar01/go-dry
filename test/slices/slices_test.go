@@ -1,10 +1,10 @@
 package slices
 
 import (
-	"go-dry/pkg/slices"
+	"github.com/mjmar01/go-dry/pkg/slices"
+	. "github.com/stretchr/testify/assert"
 	"testing"
 )
-import . "github.com/stretchr/testify/assert"
 
 func TestElementInSlice(t *testing.T) {
 	assert := New(t)

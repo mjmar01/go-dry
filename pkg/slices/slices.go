@@ -27,3 +27,12 @@ func Repeat[T any](count int, elements ...T) (out []T) {
 	}
 	return
 }
+
+func IndexOf[T comparable](slice []T, value T) int {
+	for i, element := range slice {
+		if element == value {
+			return i
+		}
+	}
+	return -1
+}

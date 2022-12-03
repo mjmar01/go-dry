@@ -27,3 +27,11 @@ func TestRepeat(t *testing.T) {
 	assert.Equal(6, len(slice))
 	assert.Equal([]string{"1", "2", "1", "2", "1", "2"}, slice)
 }
+
+func TestIndexOf(t *testing.T) {
+	assert := New(t)
+	slice := []int{4, 2, 8, 9}
+
+	assert.Equal(2, slices.IndexOf(slice, 8))
+	assert.Equal(-1, slices.IndexOf(slice, 3))
+}

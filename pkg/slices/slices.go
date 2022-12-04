@@ -1,9 +1,11 @@
 package slices
 
-func Contains[T comparable](slice []T, element T) bool {
+func ContainsAny[T comparable](slice []T, elements ...T) bool {
 	for _, e := range slice {
-		if e == element {
-			return true
+		for _, element := range elements {
+			if e == element {
+				return true
+			}
 		}
 	}
 	return false

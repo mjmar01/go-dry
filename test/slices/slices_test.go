@@ -9,8 +9,8 @@ import (
 func TestContains(t *testing.T) {
 	assert := New(t)
 	slice := []int{1, 2, 3, 4, 5, 6}
-	assert.Equal(true, slices.Contains(slice, 3))
-	assert.Equal(false, slices.Contains(slice, 7))
+	assert.Equal(true, slices.ContainsAny(slice, 3, 7))
+	assert.Equal(false, slices.ContainsAny(slice, 7, 8))
 }
 
 func TestContainsAll(t *testing.T) {

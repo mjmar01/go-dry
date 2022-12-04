@@ -6,18 +6,26 @@ import (
 	"testing"
 )
 
-func TestElementInSlice(t *testing.T) {
+func TestContains(t *testing.T) {
 	assert := New(t)
 	slice := []int{1, 2, 3, 4, 5, 6}
-	assert.Equal(true, slices.ElementInSlice(slice, 3))
-	assert.Equal(false, slices.ElementInSlice(slice, 7))
+	assert.Equal(true, slices.Contains(slice, 3))
+	assert.Equal(false, slices.Contains(slice, 7))
+}
+
+func TestContainsAll(t *testing.T) {
+	assert := New(t)
+	slice := []int{1, 2, 3, 4, 5, 6}
+	assert.Equal(true, slices.ContainsAll(slice, 3, 5, 1))
+	assert.Equal(false, slices.ContainsAll(slice, 3, 5, 7))
 }
 
 func TestDistinct(t *testing.T) {
 	assert := New(t)
 	slice := []int{1, 2, 2, 3, 3, 3}
 	distinct := []int{1, 2, 3}
-	assert.Equal(distinct, slices.Distinct(slice))
+	assert.Equal(true, slices.ContainsAll(slices.Distinct(slice), distinct...))
+	assert.Equal(3, len(slices.Distinct(slice)))
 }
 
 func TestRepeat(t *testing.T) {

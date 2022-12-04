@@ -1,12 +1,25 @@
 package slices
 
-func ElementInSlice[T comparable](slice []T, element T) bool {
+func Contains[T comparable](slice []T, element T) bool {
 	for _, e := range slice {
 		if e == element {
 			return true
 		}
 	}
 	return false
+}
+
+func ContainsAll[T comparable](slice []T, elements ...T) bool {
+elem:
+	for _, element := range elements {
+		for _, e := range slice {
+			if e == element {
+				continue elem
+			}
+		}
+		return false
+	}
+	return true
 }
 
 func Distinct[T comparable](slice []T) (distinct []T) {

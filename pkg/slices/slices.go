@@ -1,5 +1,17 @@
 package slices
 
+func Remove[T comparable](slice []T, element T) []T {
+	for {
+		idx := IndexOf(slice, element)
+		if idx == -1 {
+			break
+		}
+		slice[idx] = slice[len(slice)-1]
+		slice = slice[:len(slice)-1]
+	}
+	return slice
+}
+
 func ContainsAny[T comparable](slice []T, elements ...T) bool {
 	for _, e := range slice {
 		for _, element := range elements {

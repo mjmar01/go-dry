@@ -3,8 +3,17 @@ package slices
 import (
 	"github.com/mjmar01/go-dry/pkg/slices"
 	. "github.com/stretchr/testify/assert"
+	"sort"
 	"testing"
 )
+
+func TestRemove(t *testing.T) {
+	assert := New(t)
+	slice := []int{1, 2, 3, 2, 4}
+	slice = slices.Remove(slice, 2)
+	sort.Ints(slice)
+	assert.Equal([]int{1, 3, 4}, slice)
+}
 
 func TestContains(t *testing.T) {
 	assert := New(t)
